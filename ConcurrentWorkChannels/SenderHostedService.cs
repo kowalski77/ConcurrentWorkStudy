@@ -4,7 +4,7 @@ using AutoFixture;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace ConcurrentWorkStudy
+namespace ConcurrentWorkChannels
 {
     public class SenderHostedService : BackgroundService
     {

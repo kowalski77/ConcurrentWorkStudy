@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 
-namespace ConcurrentWorkStudy
+namespace ConcurrentWorkChannels
 {
     public class ChannelService<TMessage> where TMessage : class, new()
     {

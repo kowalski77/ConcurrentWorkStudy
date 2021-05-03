@@ -1,4 +1,4 @@
-﻿namespace ConcurrentWorkStudy
+﻿namespace ConcurrentWorkChannels
 {
     public class LogInfo
     {
