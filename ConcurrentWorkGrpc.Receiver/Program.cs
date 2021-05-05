@@ -6,6 +6,7 @@ using ConcurrentWorkGrpc.Driver.Client;
 using ConcurrentWorkGrpc.Driver.Support;
 using Google.Protobuf.WellKnownTypes;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace ConcurrentWorkGrpc.Receiver
 {
@@ -35,7 +36,11 @@ namespace ConcurrentWorkGrpc.Receiver
         private static void ConfigureServices()
         {
             var services = new ServiceCollection();
-            services.AddDriverClient(options => { options.Target = "127.0.0.1:50053"; });
+            services.AddLogging(configure => configure.AddConsole());
+            services.AddDriverClient(options =>
+            {
+                options.Target = "127.0.0.1:50053";
+            });
 
             serviceProvider = services.BuildServiceProvider(true);
         }

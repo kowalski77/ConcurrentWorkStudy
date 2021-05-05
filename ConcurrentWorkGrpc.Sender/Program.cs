@@ -1,6 +1,9 @@
 ﻿using System;
-using System.Threading.Tasks;
+using ConcurrentWorkGrpc.Contracts;
+using ConcurrentWorkGrpc.Driver.Server;
+using ConcurrentWorkGrpc.Sender.Data;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace ConcurrentWorkGrpc.Sender
 {
@@ -8,13 +11,15 @@ namespace ConcurrentWorkGrpc.Sender
     {
         private static IServiceProvider? serviceProvider;
 
-        private static async Task Main()
+        private static void Main()
         {
             ConfigureServices();
 
-            Console.WriteLine("Press a key to start sending samples...");
-            Console.ReadKey();
+            var driverServer = serviceProvider!.GetRequiredService<DriverServer>();
+            driverServer.Start();
 
+            Console.WriteLine("Press a key to stop the service.");
+            Console.ReadKey();
 
             DisposeServices();
         }
@@ -22,6 +27,17 @@ namespace ConcurrentWorkGrpc.Sender
         private static void ConfigureServices()
         {
             var services = new ServiceCollection();
+            services.AddLogging(configure => configure.AddConsole());
+            services.AddSingleton<SamplesProviderService>();
+            services.AddSingleton<ISamplesRepository, SamplesRepository>();
+
+            services.AddDriverService((provider, options) =>
+            {
+                options.Host = "127.0.0.1";
+                options.Port = 50053;
+                options.ServerServiceCollection.Add(
+                    SamplesService.BindService(provider.GetRequiredService<SamplesProviderService>()));
+            });
 
             serviceProvider = services.BuildServiceProvider(true);
         }
