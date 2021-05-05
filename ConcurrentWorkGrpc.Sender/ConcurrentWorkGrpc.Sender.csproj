@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ConcurrentWorkGrpc.Driver\ConcurrentWorkGrpc.Driver.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="..\ConcurrentWorkGrpc.Contracts\Samples.proto" GrpcServices="Client">
+      <Link>Protos\Samples.proto</Link>
+    </Protobuf>
+  </ItemGroup>
+
+</Project>

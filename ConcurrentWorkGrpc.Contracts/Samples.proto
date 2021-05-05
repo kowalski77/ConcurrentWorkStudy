@@ -1,0 +1,15 @@
+﻿syntax = "proto3";
+option csharp_namespace = "ConcurrentWorkGrpc.Contracts";
+package ConcurrentWorkGrpc;
+
+import "google/protobuf/empty.proto";
+
+service SamplesService{
+	rpc GetSamples(google.protobuf.Empty) returns (stream Sample);
+}
+
+message Sample{
+	string id = 1;
+	string name = 2;
+	bool active = 3;
+}
