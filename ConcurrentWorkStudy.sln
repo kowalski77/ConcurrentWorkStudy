@@ -20,9 +20,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConcurrentWorkGrpc.Contract
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConcurrentWorkGrpc.Driver", "ConcurrentWorkGrpc.Driver\ConcurrentWorkGrpc.Driver.csproj", "{E30B7366-89BB-434D-ACA0-EF9DB6526A50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcurrentWorkGrpc.Receiver", "ConcurrentWorkGrpc.Receiver\ConcurrentWorkGrpc.Receiver.csproj", "{E2FABCFA-7DCD-47F2-996E-07CA08495B9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConcurrentWorkGrpc.Receiver", "ConcurrentWorkGrpc.Receiver\ConcurrentWorkGrpc.Receiver.csproj", "{E2FABCFA-7DCD-47F2-996E-07CA08495B9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcurrentWorkGrpc.Sender", "ConcurrentWorkGrpc.Sender\ConcurrentWorkGrpc.Sender.csproj", "{31339E9F-5888-4E88-9BCE-78FB4D9FB62B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConcurrentWorkGrpc.Sender", "ConcurrentWorkGrpc.Sender\ConcurrentWorkGrpc.Sender.csproj", "{31339E9F-5888-4E88-9BCE-78FB4D9FB62B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Constraining", "Constraining", "{BA7D906E-62FF-49F0-94FB-96B134143262}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcurrentConstrainThreads", "ConcurrentConstrainThreads\ConcurrentConstrainThreads.csproj", "{9981C7FA-E0F7-4E7A-AC71-9D5EF630DDFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +54,10 @@ Global
 		{31339E9F-5888-4E88-9BCE-78FB4D9FB62B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31339E9F-5888-4E88-9BCE-78FB4D9FB62B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31339E9F-5888-4E88-9BCE-78FB4D9FB62B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9981C7FA-E0F7-4E7A-AC71-9D5EF630DDFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9981C7FA-E0F7-4E7A-AC71-9D5EF630DDFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9981C7FA-E0F7-4E7A-AC71-9D5EF630DDFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9981C7FA-E0F7-4E7A-AC71-9D5EF630DDFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +70,8 @@ Global
 		{E30B7366-89BB-434D-ACA0-EF9DB6526A50} = {D8807381-27ED-46B9-B770-9F6737773493}
 		{E2FABCFA-7DCD-47F2-996E-07CA08495B9A} = {D8807381-27ED-46B9-B770-9F6737773493}
 		{31339E9F-5888-4E88-9BCE-78FB4D9FB62B} = {D8807381-27ED-46B9-B770-9F6737773493}
+		{BA7D906E-62FF-49F0-94FB-96B134143262} = {63222809-3FF5-42D6-A3CC-A42ED0B18D54}
+		{9981C7FA-E0F7-4E7A-AC71-9D5EF630DDFC} = {BA7D906E-62FF-49F0-94FB-96B134143262}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A3FAF3CA-98A4-42D3-BABE-BA5637A24E29}
